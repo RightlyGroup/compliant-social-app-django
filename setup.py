@@ -10,7 +10,7 @@ VERSION_RE = re.compile('__version__ = \'([\d\.]+)\'')
 
 
 def read_version():
-    with open('social_django/__init__.py') as file:
+    with open('compliant_social_django/__init__.py') as file:
         version_line = [line for line in file.readlines()
                         if line.startswith('__version__')][0]
         return VERSION_RE.match(version_line).groups()[0]
