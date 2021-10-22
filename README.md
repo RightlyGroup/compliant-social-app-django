@@ -49,6 +49,24 @@ This project follows [Semantic Versioning 2.0.0](http://semver.org/spec/v2.0.0.h
 
 This fork's versioning will match the major version of the original package version upon which it is based
 
+## Building and Releasing
+
+To release a new version use these steps:
+
+1. Increment the version number in `__init.py__`
+2. Remove the `build` and `dist` directories completely
+   ```bash
+   rm -rf build dist
+   ```
+3. Build the source distribution:
+   ```bash
+   python setup.py sdist
+   ```
+4. Push the distribution
+   ```bash
+   python -m twine upload dist/*
+   ```
+
 ## License
 
 This project follows the BSD license. See the [LICENSE](LICENSE) for details.
