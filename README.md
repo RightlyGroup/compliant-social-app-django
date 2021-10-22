@@ -54,18 +54,20 @@ This fork's versioning will match the major version of the original package vers
 To release a new version use these steps:
 
 1. Increment the version number in `__init.py__`
-2. Remove the `build` and `dist` directories completely
+2. Update the `CHANGELOG.md` with description of the changes in the release (and commit)
+3. Remove the `build` and `dist` directories completely
    ```bash
    rm -rf build dist
    ```
-3. Build the source distribution:
+4. Build the source distribution:
    ```bash
    python setup.py sdist
    ```
-4. Push the distribution
+5. Push the distribution
    ```bash
    python -m twine upload dist/*
    ```
+6. Tag the release and push the tag
 
 ## License
 
