@@ -9,7 +9,7 @@ from django.core.management import call_command
 from django.db import IntegrityError
 from django.test import TestCase
 
-from social_django.models import AbstractUserSocialAuth, Association, Code, \
+from compliant_social_django.models import AbstractUserSocialAuth, Association, Code, \
     DjangoStorage, Nonce, Partial, UserSocialAuth
 from .compat import username_max_length
 
@@ -102,7 +102,7 @@ class TestUserSocialAuth(TestCase):
 
     def test_username_field(self):
         self.assertEqual(UserSocialAuth.username_field(), 'username')
-        with mock.patch('social_django.models.UserSocialAuth.user_model',
+        with mock.patch('compliant_social_django.models.UserSocialAuth.user_model',
                         return_value=mock.Mock(USERNAME_FIELD='test')):
             self.assertEqual(UserSocialAuth.username_field(), 'test')
 
@@ -123,14 +123,14 @@ class TestUserSocialAuth(TestCase):
             UserSocialAuth.create_user(username=self.user.username,
                                        email=None)
 
-    @mock.patch('social_django.models.UserSocialAuth.username_field',
+    @mock.patch('compliant_social_django.models.UserSocialAuth.username_field',
                 return_value='email')
     @mock.patch('django.contrib.auth.models.UserManager.create_user',
                 side_effect=IntegrityError)
     def test_create_user_custom_username(self, *args):
         UserSocialAuth.create_user(username=self.user.email)
 
-    @mock.patch('social_django.storage.transaction', spec=[])
+    @mock.patch('compliant_social_django.storage.transaction', spec=[])
     def test_create_user_without_transaction_atomic(self, *args):
         UserSocialAuth.create_user(username='test')
         self.assertTrue(self.user_model.objects.filter(
@@ -174,7 +174,7 @@ class TestUserSocialAuth(TestCase):
         self.assertEqual(usa.uid, '1')
         self.assertEqual(str(usa), str(self.user))
 
-    @mock.patch('social_django.storage.transaction', spec=[])
+    @mock.patch('compliant_social_django.storage.transaction', spec=[])
     def test_create_social_auth_without_transaction_atomic(self, *args):
         with self.assertRaises(IntegrityError):
             UserSocialAuth.create_social_auth(

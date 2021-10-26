@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.admin",
-    "social_django",
+    "compliant_social_django",
 ]
 
 SITE_ID = 1
@@ -33,7 +33,7 @@ MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
+    'compliant_social_django.middleware.SocialAuthExceptionMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -50,8 +50,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
+                'compliant_social_django.context_processors.backends',
+                'compliant_social_django.context_processors.login_redirect',
             ],
         }
     },
@@ -61,5 +61,5 @@ SECRET_KEY = '6p%gef2(6kvjsgl*7!51a7z8c3=u4uc&6ulpua0g1^&sthiifp'
 
 STATIC_URL = '/static/'
 
-SOCIAL_AUTH_AUDIT_LOGGER='social_django.audit.clients.DummyAuditLogger'
+SOCIAL_AUTH_AUDIT_LOGGER='compliant_social_django.audit.clients.DummyAuditLogger'
 KMS_FIELD_KEY='alias/fake_key'

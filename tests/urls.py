@@ -5,5 +5,5 @@ from .compat import admin_urls
 
 urlpatterns = [
     url(r'^admin/', admin_urls),
-    url(r'^', include('social_django.urls', namespace='social')),
+    url(r'^', include('compliant_social_django.urls', namespace='social')),
 ]

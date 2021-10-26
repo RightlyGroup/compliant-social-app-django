@@ -3,14 +3,14 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import social_django.fields
-import social_django.storage
+import compliant_social_django.fields
+import compliant_social_django.storage
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('social_django', '0005_auto_20160727_2333'),
+        ('compliant_social_django', '0005_auto_20160727_2333'),
     ]
 
     operations = [
@@ -21,11 +21,11 @@ class Migration(migrations.Migration):
                 ('token', models.CharField(db_index=True, max_length=32)),
                 ('next_step', models.PositiveSmallIntegerField(default=0)),
                 ('backend', models.CharField(max_length=32)),
-                ('data', social_django.fields.JSONField(default=dict)),
+                ('data', compliant_social_django.fields.JSONField(default=dict)),
             ],
             options={
                 'db_table': 'social_auth_partial',
             },
-            bases=(models.Model, social_django.storage.DjangoPartialMixin),
+            bases=(models.Model, compliant_social_django.storage.DjangoPartialMixin),
         ),
     ]

@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
     ]
 
     dependencies = [
-        ('social_django', '0004_auto_20160423_0400'),
+        ('compliant_social_django', '0004_auto_20160423_0400'),
     ]
 
     operations = [

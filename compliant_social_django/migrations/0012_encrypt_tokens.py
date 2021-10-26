@@ -4,7 +4,7 @@ from django.db import migrations, models
 
 
 def encrypt_tokens(apps, schema_editor):
-    SocialUser = apps.get_model('social_django', 'UserSocialAuth')
+    SocialUser = apps.get_model('compliant_social_django', 'UserSocialAuth')
     for social_user in SocialUser.objects.all():
         extra_data = social_user.extra_data
         save = False
@@ -27,7 +27,7 @@ def encrypt_tokens(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('social_django', '0011_create_kms_token_fields'),
+        ('compliant_social_django', '0011_create_kms_token_fields'),
     ]
 
     operations = [
