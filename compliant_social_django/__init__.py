@@ -1,4 +1,4 @@
-__version__ = '4.2.0'
+__version__ = '4.2.1'
 
 
 from social_core.backends.base import BaseAuth
@@ -20,4 +20,4 @@ if not getattr(BaseAuth, '__init_patched', False):
     BaseAuth.__init__ = baseauth_init_workaround(BaseAuth.__init__)
     BaseAuth.__init_patched = True
 
-default_app_config = 'social_django.config.PythonSocialAuthConfig'
+default_app_config = 'compliant_social_django.config.PythonSocialAuthConfig'

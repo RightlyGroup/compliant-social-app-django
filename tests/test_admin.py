@@ -3,8 +3,8 @@ from __future__ import unicode_literals, absolute_import
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
-from social_django.compat import reverse
-from social_django.models import UserSocialAuth
+from compliant_social_django.compat import reverse
+from compliant_social_django.models import UserSocialAuth
 
 
 class SocialAdminTest(TestCase):

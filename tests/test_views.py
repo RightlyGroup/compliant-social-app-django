@@ -5,9 +5,9 @@ from django.contrib.auth.models import AbstractBaseUser
 
 from django.test import TestCase, override_settings
 
-from social_django.compat import reverse
-from social_django.models import UserSocialAuth
-from social_django.views import get_session_timeout
+from compliant_social_django.compat import reverse
+from compliant_social_django.models import UserSocialAuth
+from compliant_social_django.views import get_session_timeout
 from .compat import base_url
 
 

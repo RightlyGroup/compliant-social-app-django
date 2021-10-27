@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.test import TestCase, RequestFactory, override_settings
 
-from social_django.context_processors import login_redirect
+from compliant_social_django.context_processors import login_redirect
 
 
 @override_settings(REDIRECT_FIELD_NAME='next')

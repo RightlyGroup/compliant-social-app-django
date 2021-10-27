@@ -9,7 +9,7 @@ from django.utils import timezone
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('social_django', '0007_code_timestamp'),
+        ('compliant_social_django', '0007_code_timestamp'),
     ]
 
     operations = [

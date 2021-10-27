@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from django.test import TestCase, override_settings
 
 from social_core.exceptions import AuthCanceled
-from social_django.compat import reverse
+from compliant_social_django.compat import reverse
 from .compat import base_url
 
 

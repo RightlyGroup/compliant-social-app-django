@@ -10,7 +10,7 @@ from django.http import QueryDict, HttpResponse
 from django.test import TestCase, RequestFactory
 from django.utils.translation import ugettext_lazy
 
-from social_django.utils import load_strategy, load_backend
+from compliant_social_django.utils import load_strategy, load_backend
 
 
 class TestStrategy(TestCase):

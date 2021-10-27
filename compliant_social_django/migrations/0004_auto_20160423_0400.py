@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     ]
 
     dependencies = [
-        ('social_django', '0003_alter_email_max_length'),
+        ('compliant_social_django', '0003_alter_email_max_length'),
     ]
 
     operations = [

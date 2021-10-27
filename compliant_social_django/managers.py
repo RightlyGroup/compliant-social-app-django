@@ -5,7 +5,7 @@ class UserSocialAuthManager(models.Manager):
     """Manager for the UserSocialAuth django model."""
 
     class Meta:
-        app_label = "social_django"
+        app_label = "compliant_social_django"
 
     def get_social_auth(self, provider, uid):
         try:

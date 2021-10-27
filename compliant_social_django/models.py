@@ -46,7 +46,7 @@ class AbstractUserSocialAuth(models.Model, CompliantDjangoUserMixin):
         return str(self.user)
 
     class Meta:
-        app_label = "social_django"
+        app_label = "compliant_social_django"
         abstract = True
 
     @classmethod
@@ -75,7 +75,7 @@ class UserSocialAuth(AbstractUserSocialAuth):
 
     class Meta:
         """Meta data"""
-        app_label = "social_django"
+        app_label = "compliant_social_django"
         unique_together = ('provider', 'uid')
         db_table = 'social_auth_usersocialauth'
 
@@ -87,7 +87,7 @@ class Nonce(models.Model, DjangoNonceMixin):
     salt = models.CharField(max_length=65)
 
     class Meta:
-        app_label = "social_django"
+        app_label = "compliant_social_django"
         unique_together = ('server_url', 'timestamp', 'salt')
         db_table = 'social_auth_nonce'
 
@@ -102,7 +102,7 @@ class Association(models.Model, DjangoAssociationMixin):
     assoc_type = models.CharField(max_length=64)
 
     class Meta:
-        app_label = "social_django"
+        app_label = "compliant_social_django"
         db_table = 'social_auth_association'
         unique_together = (
             ('server_url', 'handle',)
@@ -116,7 +116,7 @@ class Code(models.Model, DjangoCodeMixin):
     timestamp = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
-        app_label = "social_django"
+        app_label = "compliant_social_django"
         db_table = 'social_auth_code'
         unique_together = ('email', 'code')
 
@@ -129,7 +129,7 @@ class Partial(models.Model, DjangoPartialMixin):
     timestamp = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
-        app_label = "social_django"
+        app_label = "compliant_social_django"
         db_table = 'social_auth_partial'
 
 
