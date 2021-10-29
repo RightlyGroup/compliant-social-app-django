@@ -3,7 +3,7 @@ from datetime import timedelta
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 
-from social_django.models import Code, Partial
+from compliant_social_django.models import Code, Partial
 
 
 class Command(BaseCommand):

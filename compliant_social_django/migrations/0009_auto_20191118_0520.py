@@ -7,7 +7,7 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('social_django', '0008_partial_timestamp'),
+        ('compliant_social_django', '0008_partial_timestamp'),
     ]
 
     operations = [

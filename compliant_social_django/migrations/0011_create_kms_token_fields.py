@@ -6,7 +6,7 @@ import django_kms.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('social_django', '0010_uid_db_index'),
+        ('compliant_social_django', '0010_uid_db_index'),
     ]
 
     operations = [
