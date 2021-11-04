@@ -23,4 +23,4 @@ class AuditLogsTestCase(TestCase):
         TestAuditLogBackend().revoke_token('fake_token', 'fake_uid')
 
         self.assertTrue(log_request_token_event.called)
-        self.assertTrue(log_request_token_event.called)
+        self.assertTrue(log_revoke_token_event.called)
