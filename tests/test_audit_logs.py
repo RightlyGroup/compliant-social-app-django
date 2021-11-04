@@ -14,7 +14,7 @@ class AuditLogsTestCase(TestCase):
     @patch.object(AbstractBaseAuditLogger, 'log_revoke_token_event')
     def test_audit_log_decorator(self, log_revoke_token_event, log_request_token_event, request_access_token, revoke_token, refresh_token):
 
-        @create_audit_logs(AbstractBaseAuditLogger())
+        @create_audit_logs(AbstractBaseAuditLogger)
         class TestAuditLogBackend(BaseOAuth2):
             pass
 
