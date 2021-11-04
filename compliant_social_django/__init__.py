@@ -1,4 +1,4 @@
-__version__ = '4.2.1'
+__version__ = '4.3.0'
 
 
 from social_core.backends.base import BaseAuth

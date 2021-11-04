@@ -1,7 +1,11 @@
+from typing import Type
+
+from social_core.backends.oauth import BaseOAuth2
+
 from .audit.clients import AbstractBaseAuditLogger
 
 
-def create_audit_logs(audit_logger: AbstractBaseAuditLogger):
+def create_audit_logs(audit_logger_class: Type[AbstractBaseAuditLogger]):
     """
     A decorator which injects audit logs into a social_core backend object.
 
@@ -9,10 +13,12 @@ def create_audit_logs(audit_logger: AbstractBaseAuditLogger):
         audit_logger    An instantiated instance of an audit logger which inherits from
                         compliant_social_django.audit.clients.AbstractBaseAuditLogger
     """
-    def decorator(backend):
+    def decorator(backend: BaseOAuth2):
         original_request_access_token = backend.request_access_token
         original_refresh_token = backend.refresh_token
         original_revoke_token = backend.revoke_token
+
+        audit_logger = audit_logger_class()
 
         def new_request_access_token(self, *args, **kwargs):
             json = original_request_access_token(self, *args, **kwargs)
