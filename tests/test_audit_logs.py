@@ -2,7 +2,7 @@ from django.test import TestCase
 from compliant_social_django.audit.clients import AbstractBaseAuditLogger
 from compliant_social_django.decorators import create_audit_logs
 from social_core.backends.oauth import BaseOAuth2
-from mock import patch
+from unittest.mock import patch
 
 
 class AuditLogsTestCase(TestCase):
