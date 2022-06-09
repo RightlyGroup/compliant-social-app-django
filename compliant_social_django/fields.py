@@ -9,7 +9,7 @@ from django.utils.encoding import force_str
 from social_core.utils import setting_name
 
 if getattr(settings, setting_name('POSTGRES_JSONFIELD'), False):
-    from django.contrib.postgres.fields import JSONField as JSONFieldBase
+    from django.db.models import JSONField as JSONFieldBase
 else:
     JSONFieldBase = models.TextField
 
