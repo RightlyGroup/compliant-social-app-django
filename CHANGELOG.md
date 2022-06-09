@@ -5,9 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.2](https://github.com/RightlyGroup/compliant-social-app-django/releases/tag/4.3.2) - 2021-11-08
+
+- Removing code deprecated in Django 3.0
+
 ## [4.3.1](https://github.com/RightlyGroup/compliant-social-app-django/releases/tag/4.3.1) - 2021-11-08
 
-- Django 4.0 compatibility changes
+- Move from Postgres JsonField to Django JsonField for Django 4.0 compatibility
 
 ## [4.3.0](https://github.com/RightlyGroup/compliant-social-app-django/releases/tag/4.2.1) - 2021-11-08
 
