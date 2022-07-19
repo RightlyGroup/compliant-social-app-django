@@ -187,7 +187,7 @@ class CompliantDjangoUserMixin(DjangoUserMixin):
                                             self.extra_data)
             # break the access token and refresh token out of the extra data
             self.actual_access_token = extra_data.pop('access_token', None)
-            self.actual_refresh_token = extra_data.pop('refresh_token', None)
+            self.actual_refresh_token = extra_data.pop('refresh_token', self.actual_refresh_token)
             if self.set_extra_data(extra_data):
                 self.save()
 
