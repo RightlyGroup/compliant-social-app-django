@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.3](https://github.com/RightlyGroup/compliant-social-app-django/releases/tag/4.3.3) - 2022-07-19
+
+- Fixed a bug where `refresh_token()` would set the refresh token to None and invalidate subsequent refresh attempts. 
+
 ## [4.3.2](https://github.com/RightlyGroup/compliant-social-app-django/releases/tag/4.3.2) - 2021-11-08
 
 - Removing code deprecated in Django 3.0
