@@ -191,6 +191,10 @@ class CompliantDjangoUserMixin(DjangoUserMixin):
             if self.set_extra_data(extra_data):
                 self.save()
 
+    def mark_revoked(self):
+        self.revoked = True
+        self.save()
+
     def set_extra_data(self, extra_data=None):
         """
         Making sure we never store the tokens in extra data

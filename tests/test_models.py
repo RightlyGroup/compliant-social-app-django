@@ -95,6 +95,11 @@ class TestUserSocialAuth(TestCase):
         db_data = UserSocialAuth.objects.get(id=self.usa.id).extra_data
         self.assertEqual(db_data, {'a': 'b'})
 
+    def test_mark_revoked(self):
+        self.assertEqual(self.usa.revoked, False)
+        self.usa.mark_revoked()
+        self.assertEqual(self.usa.revoked, True)
+
     def test_disconnect(self):
         m = mock.Mock()
         UserSocialAuth.disconnect(m)
