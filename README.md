@@ -63,9 +63,10 @@ To release a new version use these steps:
    ```bash
    python setup.py sdist
    ```
-5. Push the distribution
+5. Push the distribution. You'll need to configure your `~/.pypirc` file to
+   authenticate with Pypi using an API token before running this.
    ```bash
-   python -m twine upload dist/*
+   python -m twine upload --repository compliant-social-app-django dist/*
    ```
 6. Tag the release and push the tag
 
