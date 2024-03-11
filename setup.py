@@ -6,7 +6,7 @@ from os.path import join, dirname
 from setuptools import setup, find_packages
 
 
-VERSION_RE = re.compile('__version__ = \'([\d\.]+)\'')
+VERSION_RE = re.compile(r'__version__ = ["\']([\d\.]+)["\']')
 
 
 def read_version():
