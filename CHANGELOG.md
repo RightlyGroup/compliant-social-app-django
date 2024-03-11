@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.4.0](https://github.com/RightlyGroup/compliant-social-app-django/releases/tag/4.4.0) - 2024-03-11
+
+- Add a new field on the UserSocialAuth that can be used to indicate when the token is revoked
+
 ## [4.3.3](https://github.com/RightlyGroup/compliant-social-app-django/releases/tag/4.3.3) - 2022-07-19
 
 - Fixed a bug where `refresh_token()` would set the refresh token to None and invalidate subsequent refresh attempts. 

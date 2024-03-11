@@ -95,6 +95,34 @@ class TestUserSocialAuth(TestCase):
         db_data = UserSocialAuth.objects.get(id=self.usa.id).extra_data
         self.assertEqual(db_data, {'a': 'b'})
 
+    def test_mark_revoked(self):
+        self.assertEqual(self.usa.revoked, False)
+        self.usa.mark_revoked()
+        self.assertEqual(self.usa.revoked, True)
+
+    def test_clear_revoked(self):
+        self._configure_mock_kms_client("actual_refresh_token")
+        self.usa.mark_revoked()
+        self.assertEqual(self.usa.revoked, True)
+
+        new_access_token = "123"
+        refresh_token = "abc"
+
+        self.usa.actual_refresh_token = refresh_token
+        self.usa.actual_access_token = "321"
+
+        mock_backend = mock.MagicMock()
+        self.usa.get_backend_instance = mock.MagicMock()
+        self.usa.get_backend_instance.return_value = mock_backend
+        mock_backend.extra_data.return_value = {"access_token": new_access_token}
+
+        self.usa.refresh_token(mock.MagicMock())
+
+        self.assertEqual(refresh_token, self.usa.actual_refresh_token)
+        self.assertEqual(new_access_token, self.usa.actual_access_token)
+
+        self.assertEqual(self.usa.revoked, False)
+
     def test_disconnect(self):
         m = mock.Mock()
         UserSocialAuth.disconnect(m)

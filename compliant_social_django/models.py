@@ -37,6 +37,7 @@ class AbstractUserSocialAuth(models.Model, CompliantDjangoUserMixin):
     uid = models.CharField(max_length=UID_LENGTH, db_index=True)
     actual_access_token = KMSEncryptedCharField(null=True)
     actual_refresh_token = KMSEncryptedCharField(null=True)
+    revoked = models.BooleanField(default=False)
     extra_data = JSONField()
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
