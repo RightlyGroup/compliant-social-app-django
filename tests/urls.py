@@ -1,10 +1,7 @@
-# -*- coding: utf-8
-from django.conf.urls import include
-from django.urls import re_path
-from .compat import admin_urls
-
+from django.contrib import admin
+from django.urls import include, path
 
 urlpatterns = [
-    re_path(r'^admin/', admin_urls),
-    re_path(r'^', include('compliant_social_django.urls', namespace='social')),
+    path("admin/", admin.site.urls),
+    path("", include("compliant_social_django.urls", namespace="social")),
 ]

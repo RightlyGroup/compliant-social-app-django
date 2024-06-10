@@ -4,14 +4,18 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-six = "*"
-social-auth-core = ">=3.3.0"
+social-auth-core = ">=4.4.1"
 django-kms-field = "==0.6"
+Django= ">=3.2"
 
 [dev-packages]
+coverage = "*"
+pre-commit = "==3.5.0"
+tox = "==4.11.3"
 twine = "==4.0.2"
 setuptools = "*"
 wheel = "*"
 
+
 [requires]
-python_version = "3.8"
+python_version = "3.9"
