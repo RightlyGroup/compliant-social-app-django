@@ -66,8 +66,19 @@ class TestSocialAuthUser(TestCase):
 
 class TestUserSocialAuth(TestCase):
     def setUp(self):
-        self.test_token = "eyJzdWIiOjEwMDAsImlzcyI6Imh0dHBzOi8vYXV0aG9yaXphdGlvbi1zZXJ2ZXIuY29tIiwiY2lkIjoiaHR0cHM6Ly9leGFtcGxlLWFwcC5jb20iLCJpYXQiOjE0NzAwMDI3MDMsImV4cCI6MTUyOTE3NDg1MSwic2NvcGUiOiJyZWFkIHdyaXRlIn0"
-        self.encrypted_test_token = b"vE4bSBeUzlOPG8MjK0QuITejoHEtAlJj5YCyzy+5SThQvjIXjY8K4b5xdTc8sYAespdqfbHYWi4UiwMVlpOm1vJcVNAw+QpRSyQ6zpPaiPz6wAWco7HmkG1TEJ2eHzQ3XiC5H0UBByhhgY4vzh824Djxn9u+MOIZBcirRzWctYq3HQshGyzfe5BHqm51TrtC/En6tVwUpF5vCNQ2ezmkGLBNDBKESnhY5QHapUwum1nb3RWlEMRBnR9wTZD8zufq"
+        self.test_token = (
+            "eyJzdWIiOjEwMDAsImlzcyI6Imh0dHBzOi8vYXV0aG9yaXphd"
+            "Glvbi1zZXJ2ZXIuY29tIiwiY2lkIjoiaHR0cHM6Ly9leGF"
+            "tcGxlLWFwcC5jb20iLCJpYXQiOjE0NzAwMDI3MDMsImV4c"
+            "CI6MTUyOTE3NDg1MSwic2NvcGUiOiJyZWFkIHdyaXRlIn0"
+        )
+        self.encrypted_test_token = (
+            b"vE4bSBeUzlOPG8MjK0QuITejoHEtAlJj5YCyzy+5SThQvjIX"
+            b"jY8K4b5xdTc8sYAespdqfbHYWi4UiwMVlpOm1vJcVNAw+QpRSyQ6zp"
+            b"PaiPz6wAWco7HmkG1TEJ2eHzQ3XiC5H0UBByhhgY4vzh824Djxn9u+"
+            b"MOIZBcirRzWctYq3HQshGyzfe5BHqm51TrtC/En6tVwUpF5vCNQ2ez"
+            b"mkGLBNDBKESnhY5QHapUwum1nb3RWlEMRBnR9wTZD8zufq"
+        )
 
         self.user_model = get_user_model()
         self.user = self.user_model._default_manager.create_user(
