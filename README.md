@@ -35,7 +35,7 @@ KMS must be set up independently, and you must specify a KMS_FIELD_KEY in settin
 If moving to this package from the main social-app-django package the db migrations will also handle the migration of
 tokens, with encryption, into their appropriate fields.
 
-Core project documentation is available at http://python-social-auth.readthedocs.org/.
+Core project documentation is available at https://python-social-auth.readthedocs.org/.
 
 ## Setup
 

@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('compliant_social_django', '0012_encrypt_tokens'),
+        ("compliant_social_django", "0012_encrypt_tokens"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='usersocialauth',
-            name='revoked',
+            model_name="usersocialauth",
+            name="revoked",
             field=models.BooleanField(default=False),
         ),
     ]

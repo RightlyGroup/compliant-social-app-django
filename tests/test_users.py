@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock
 
-from django.test import TestCase
 from django.contrib.auth import get_user_model
+from django.test import TestCase
 
 from compliant_social_django.models import UserSocialAuth
 
