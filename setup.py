@@ -35,9 +35,12 @@ setup(
     url="https://github.com/RightlyGroup/compliant-social-app-django",
     packages=[
         "compliant_social_django",
+        "compliant_social_django.audit",
+        "compliant_social_django.backends",
         "compliant_social_django.migrations",
         "compliant_social_django.management",
         "compliant_social_django.management.commands",
+        "compliant_social_django.pipeline",
     ],
     long_description=long_description(),
     long_description_content_type="text/markdown",
