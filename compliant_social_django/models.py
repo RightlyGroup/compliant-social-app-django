@@ -3,28 +3,17 @@
 from django.conf import settings
 from django.db import models
 from django.db.utils import IntegrityError
-
 from django_kms.fields import KMSEncryptedCharField
 from social_core.utils import setting_name
 
-from .models_utils import get_kms_key
-from .storage import (
-    CompliantDjangoUserMixin,
-    DjangoAssociationMixin,
-    DjangoNonceMixin,
-    DjangoCodeMixin,
-    DjangoPartialMixin,
-    BaseDjangoStorage,
-)
-from .fields import JSONField
 from .managers import UserSocialAuthManager
 from .storage import (
     BaseDjangoStorage,
+    CompliantDjangoUserMixin,
     DjangoAssociationMixin,
     DjangoCodeMixin,
     DjangoNonceMixin,
     DjangoPartialMixin,
-    DjangoUserMixin,
 )
 
 USER_MODEL = (

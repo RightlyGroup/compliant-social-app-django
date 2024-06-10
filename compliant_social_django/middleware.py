@@ -1,7 +1,5 @@
 from urllib.parse import quote
 
-from urllib.parse import quote
-
 from django.apps import apps
 from django.conf import settings
 from django.contrib import messages

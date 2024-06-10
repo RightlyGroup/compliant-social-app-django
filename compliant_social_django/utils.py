@@ -7,7 +7,6 @@ from django.views.decorators.http import require_POST
 from social_core.exceptions import MissingBackend
 from social_core.utils import get_strategy, module_member, setting_name
 
-
 BACKENDS = settings.AUTHENTICATION_BACKENDS
 STRATEGY = getattr(
     settings,

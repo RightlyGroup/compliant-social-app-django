@@ -1,11 +1,11 @@
 """Django ORM models for Social Auth"""
 
 import base64
-from django.core.exceptions import FieldDoesNotExist
+
+from django.conf import settings
+from django.core.exceptions import FieldDoesNotExist, ImproperlyConfigured
 from django.db import router, transaction
 from django.db.utils import IntegrityError
-from django.core.exceptions import ImproperlyConfigured
-
 from social_core.storage import (
     AssociationMixin,
     BaseStorage,
@@ -14,9 +14,7 @@ from social_core.storage import (
     PartialMixin,
     UserMixin,
 )
-
-from django.conf import settings
-from social_core.utils import setting_name, module_member
+from social_core.utils import module_member, setting_name
 
 from .audit.clients import AbstractBaseAuditLogger
 

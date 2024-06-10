@@ -1,4 +1,5 @@
 from django.conf import settings
+
 """
 To avoid circular imports from using utils.py in models.py
 """

@@ -1,4 +1,4 @@
-class AbstractBaseAuditLogger(object):
+class AbstractBaseAuditLogger:
 
     @classmethod
     def log_login_event(cls, source, user_id, request=None, **kwargs):
